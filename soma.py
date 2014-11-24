@@ -1,5 +1,19 @@
+# A command line application for streaming soma.fm stations, written 
+# in Python, and licensed under the GNU GPLv3. See LICENSE.txt for 
+# more information.
+#
+# Currently, the program simply lists the soma.fm stations and asks 
+# which the user would like to play. A fairly simple interface. 
+# Eventually, I would like to use a curses interface, or possibly 
+# urwid, for a more attractive UI and interactvity.
+
+# =====================================================================
+
+# import os so we can use the os.system command 
 
 import os
+
+# List of soma.fm stations
 
 stations = [("1",
              "BAGeL Radio",
@@ -136,20 +150,34 @@ stations = [("1",
 
 
 def list_stations():
+    """ Outputs a nicely formatted list of stations from the 
+    stations[] list. Three colums with number, name of station,
+    and description.
+    """
     print "\n"
     for number, station, description, streamURL in stations:
         print "{0:3} {1:23} {2}".format(number, station, description)
 
 
 def play_station(streamURL):
+    """Plays the selected station with mplayer"""
     os.system("mplayer --nocache --quiet " + streamURL)
 
+# First we display the list of stations to the user.
+
 list_stations()
+
+# Then we ask the user to choose what station to play.
 
 print "\n"
 print "Select station:"
 selection = raw_input()
 
+# Take the user's selection and grab the streamURL from the stations[] list
+# and store it in the station_to_play variable. 
+
 station_to_play = [streamURL for (number, station, description, streamURL) in stations if selection == number]
+
+# Play the selected station.
 
 play_station(station_to_play[0])
