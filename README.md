@@ -4,7 +4,7 @@ somapy
 A command line application for streaming soma.fm stations, written in Python, and
 licensed under the GNU GPLv3. See LICENSE.txt for more information.
 
-http://i.imgur.com/HL2NF0D.jpg
+![Screenshot of somapy](http://i.imgur.com/HL2NF0D.jpg)
 
 Currently, the program simply lists the soma.fm stations and asks which the user
 would like to play. A fairly simple interface. Eventually, I would like to use
