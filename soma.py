@@ -1,7 +1,5 @@
 
-import sys
 import os
-import webbrowser
 
 stations = [("1",
              "BAGeL Radio",
