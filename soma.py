@@ -9,9 +9,11 @@
 
 # =====================================================================
 
-# import os so we can use the os.system command 
+# import os so we can use the os.system() command 
+# import sys so we can use the sys.exit() command
 
 import os
+import sys
 
 # List of soma.fm stations
 
@@ -170,8 +172,13 @@ list_stations()
 # Then we ask the user to choose what station to play.
 
 print "\n"
-print "Select station:"
+print "Select station or 'q' to quit:"
 selection = raw_input()
+
+# Quit if user input is "q" or "Q"
+
+if selection in ("q", "Q"):
+    sys.exit()
 
 # Take the user's selection and grab the streamURL from the stations[] list
 # and store it in the station_to_play variable. 
