@@ -1,7 +1,7 @@
 somapy
 ======
 
-A command line application for streaming soma.fm stations, written in Python, and
+A command line application for streaming SomaFM stations, written in Python, and
 licensed under the GNU GPLv3. See LICENSE.txt for more information.
 
 ![Screenshot of somapy](http://i.imgur.com/T8VScVD.png)

@@ -1,4 +1,4 @@
-# A command line application for streaming soma.fm stations, written
+# A command line application for streaming SomaFM stations, written
 # in Python, and licensed under the GNU GPLv3. See LICENSE.txt for
 # more information.
 
@@ -7,7 +7,7 @@
 # import os in order to use the os.system() command
 # import sys in order to use the sys.exit() command
 # import csv in order to read the comma separated value file that
-# contains the soma.fm station listing.
+# contains the SomaFM station listing.
 
 import os
 import sys
