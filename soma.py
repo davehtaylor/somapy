@@ -20,7 +20,7 @@ stationList = []
 
 
 class Station:
-    """A class for each soma.fm station, containing the station name,
+    """A class for each SomaFM station, containing the station name,
     description, and stream URL. It also has a method to play each
     station with the play() function.
     """
@@ -32,7 +32,7 @@ class Station:
 
     def play(self):
         """Plays the selected station with mplayer"""
-        os.system("mplayer --nocache --quiet " + self.streamURL + " &")
+        os.system("mplayer --nocache --quiet " + self.streamURL)
 
 # Read the stations.csv file and instantiate a list of 'Station'
 # objects from the station listings there.
