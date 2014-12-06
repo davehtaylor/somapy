@@ -32,13 +32,13 @@ class Station:
 
     def play(self):
         """Plays the selected station with mplayer"""
-        os.system("mplayer --nocache --quiet " + self.streamURL)
+        os.system("mplayer --nocache --quiet " + self.streamURL + " &")
 
 # Read the stations.csv file and instantiate a list of 'Station'
 # objects from the station listings there.
 
 with open('stations.csv', 'rb') as csvfile:
-    station_reader = csv.reader(csvfile, delimiter='|')
+    station_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for stationName, description, streamURL in station_reader:
         stationList.append(Station(stationName, description, streamURL))
 
@@ -46,6 +46,8 @@ with open('stations.csv', 'rb') as csvfile:
 # Start with a counter initialized at 1 and incremented as the listing
 # progresses. This give the user a number corresponding to a station for them
 # to select.
+
+print "\n"
 
 counter = 1
 
