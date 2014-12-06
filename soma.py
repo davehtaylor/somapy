@@ -39,6 +39,7 @@ class Station:
 
 with open('stations.csv', 'rb') as csvfile:
     station_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    next(station_reader, None)
     for stationName, description, streamURL in station_reader:
         stationList.append(Station(stationName, description, streamURL))
 
