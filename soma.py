@@ -34,6 +34,23 @@ class Station:
         """Plays the selected station with mplayer"""
         os.system("mplayer --nocache --quiet " + self.streamURL)
 
+
+def printStations():
+    """ List the stations along with their description in a nice,
+    columnar format. Start with a counter initialized at 1 and
+    incremented as the listing progresses. This give the user a
+    number corresponding to a station for them to select.
+    """
+    print "\n"
+
+    counter = 1
+
+    for item in stationList:
+        print "{0:3} {1:23} {2}".format(counter,
+                                        item.stationName, item.description)
+        counter += 1
+
+
 # Read the stations.csv file and instantiate a list of 'Station'
 # objects from the station listings there.
 
@@ -43,19 +60,7 @@ with open('stations.csv', 'rb') as csvfile:
     for stationName, description, streamURL in station_reader:
         stationList.append(Station(stationName, description, streamURL))
 
-# List the stations along with their description in a nice, columnar format
-# Start with a counter initialized at 1 and incremented as the listing
-# progresses. This give the user a number corresponding to a station for them
-# to select.
-
-print "\n"
-
-counter = 1
-
-for item in stationList:
-    print "{0:3} {1:23} {2}".format(counter,
-                                    item.stationName, item.description)
-    counter += 1
+printStations()
 
 # Then we ask the user to choose what station to play.
 
